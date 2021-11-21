@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <button class="reset" :click="ResetLikes">Reset Likes</button>
+    <button v-on:click="ResetLikes" class="reset">Reset Likes</button>
   </section>
 </template>
 
@@ -43,7 +43,7 @@ export default {
     return {};
   },
   methods: {
-    ResetLikes: function () {
+    ResetLikes() {
       this.$store.dispatch("ResetLikesAct");
     },
   },

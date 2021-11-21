@@ -14,6 +14,7 @@ export default new Vuex.Store({
         content: "I think it's going to rain",
         image: require("@/assets/img1.jpeg"),
         likes: 404,
+        likesres: 404,
       },
       {
         id: 2,
@@ -23,6 +24,7 @@ export default new Vuex.Store({
         content: "Which weighs more, a pound of feathers or a pound of bricks?",
         image: null,
         likes: 998,
+        likesres: 998,
       },
       {
         id: 3,
@@ -32,6 +34,7 @@ export default new Vuex.Store({
         content: "Felt cute, might delete later",
         image: require("@/assets/img2.jpeg"),
         likes: 160,
+        likesres: 160,
       },
       {
         id: 4,
@@ -42,6 +45,7 @@ export default new Vuex.Store({
         image:
           "https://images.pexels.com/photos/1790444/pexels-photo-1790444.jpeg",
         likes: 299,
+        likesres: 299,
       },
       {
         id: 5,
@@ -52,6 +56,7 @@ export default new Vuex.Store({
         image:
           "https://images.pexels.com/photos/9888301/pexels-photo-9888301.jpeg",
         likes: 536,
+        likesres: 536,
       },
       {
         id: 6,
@@ -63,6 +68,7 @@ export default new Vuex.Store({
         image:
           "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2015/05/28/KidsPost/Images/googall.jpg",
         likes: 1934,
+        likesres: 1934,
       },
       {
         id: 7,
@@ -73,6 +79,7 @@ export default new Vuex.Store({
         image:
           "https://guinnessworldrecords.com/Images/abbey-road_tcm25-594684.jpg",
         likes: 159,
+        likesres: 159,
       },
       {
         id: 8,
@@ -83,6 +90,7 @@ export default new Vuex.Store({
         image:
           "https://upload.wikimedia.org/wikipedia/commons/1/12/Capture-of-Blackbeard.jpg",
         likes: 104,
+        likesres: 104,
       },
       {
         id: 9,
@@ -93,6 +101,7 @@ export default new Vuex.Store({
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         image: null,
         likes: 322,
+        likesres: 322,
       },
       {
         id: 10,
@@ -103,13 +112,14 @@ export default new Vuex.Store({
           "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
         image: null,
         likes: 333,
+        likesres: 333,
       },
     ],
   },
   mutations: {
     ResetLikes: (state) => {
       state.postList.forEach((post) => {
-        post.likes == 0;
+        post.likes = post.likesres;
       });
     },
   },
