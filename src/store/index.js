@@ -123,10 +123,12 @@ export default new Vuex.Store({
       });
     },
   },
-  actions: {ResetLikesAct: (act) => {
+  actions: {
+    ResetLikesAct: (act) => {
       setTimeout(function () {
         act.commit("ResetLikes");
       }, 1000);
-    },},
+    },
+  },
   modules: {},
 });
