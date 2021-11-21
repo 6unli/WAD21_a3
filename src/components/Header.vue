@@ -42,6 +42,7 @@ export default {
   align-items: center;
   padding: 8px 24px;
   z-index: 2;
+  box-shadow: 0px 16px 40px -24px rgba(19, 28, 33, 0.4);
 }
 
 .nav form {
