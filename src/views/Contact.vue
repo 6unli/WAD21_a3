@@ -5,9 +5,14 @@
     <p>You are welcome to contact us on Workdays from Dusk till Dawn.</p>
     <p>You will find us in a dark and empty place.</p>
     <p>
-      Online You can find us on the dark web... or just contact with us with the following channels:    </p>
+      Online You can find us on the dark web... or just contact with us with the
+      following channels:
+    </p>
     <div v-for="record in contacts" :key="record.phone" :email="record.email">
-      <p><br>Tel: {{ record.phone }}<br> e-mail: {{ record.email }}</p>
+      <p>
+        <br />Tel: {{ record.phone }}<br />
+        e-mail: {{ record.email }}
+      </p>
     </div>
   </div>
 </template>
@@ -26,14 +31,18 @@ export default {
 };
 </script>
 
-
-<style>
+<style scoped>
 .contact {
   margin: auto;
   background-color: whitesmoke;
   width: 45%;
-  height: 50vh;
+  min-height: calc(100vh - 372px);
   padding: 104px 80px;
   align-items: center;
+  line-height: 130%;
+}
+td {
+  padding-top: 8px;
+  padding-right: 8px;
 }
 </style>
