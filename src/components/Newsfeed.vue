@@ -1,31 +1,39 @@
 <template>
-  <div class="main-flex-container">
-    <div class="flex-items" v-for="post in postList" :key="post.id">
-      <div class="flex-items-header">
-        <div class="flex-items-avatar">
-          <img :src="post.avatar" :alt="post.username" width="32" height="32" />
-          <p>{{ post.username }}</p>
+  <section>
+    <div class="main-flex-container">
+      <div class="flex-items" v-for="post in postList" :key="post.id">
+        <div class="flex-items-header">
+          <div class="flex-items-avatar">
+            <img
+              :src="post.avatar"
+              :alt="post.username"
+              width="32"
+              height="32"
+            />
+            <p>{{ post.username }}</p>
+          </div>
+          <p>{{ post.time }}</p>
         </div>
-        <p>{{ post.time }}</p>
-      </div>
-      <div class="flex-items-image">
-        <img
-          :src="post.image"
-          alt="user uploaded image"
-          width="100%"
-          height="auto"
-          v-if="post.image"
-        />
-      </div>
-      <div class="flex-items-content">
-        <p>{{ post.content }}</p>
-        <div class="flex-items-avatar">
-          <button @click="post.likes++">&#128077;</button>
-          <p>{{ post.likes }}</p>
+        <div class="flex-items-image">
+          <img
+            :src="post.image"
+            alt="user uploaded image"
+            width="100%"
+            height="auto"
+            v-if="post.image"
+          />
+        </div>
+        <div class="flex-items-content">
+          <p>{{ post.content }}</p>
+          <div class="flex-items-avatar">
+            <button @click="post.likes++">&#128077;</button>
+            <p>{{ post.likes }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <button class="reset" :click="ResetLikes">Reset Likes</button>
+  </section>
 </template>
 
 <script>
@@ -33,6 +41,11 @@ export default {
   name: "Newsfeed",
   data: function () {
     return {};
+  },
+  methods: {
+    ResetLikes: function () {
+      this.$store.dispatch("ResetLikesAct");
+    },
   },
   computed: {
     postList() {
@@ -109,8 +122,22 @@ button {
   cursor: pointer;
 }
 
+.reset {
+  width: 104px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  background-color: whitesmoke;
+  color: #225791;
+  position: fixed;
+  z-index: 3;
+  right: 40px;
+  bottom: 16px;
+  box-shadow: 0 16px 24px -8px rgba(19, 28, 33, 0.4);
+}
+
 button:hover {
   background: #063662;
+  color: whitesmoke;
 }
 
 button ~ p {

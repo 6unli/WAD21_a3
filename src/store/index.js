@@ -106,7 +106,17 @@ export default new Vuex.Store({
       },
     ],
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    ResetLikes: (state) => {
+      state.postList.forEach((post) => {
+        post.likes == 0;
+      });
+    },
+  },
+  actions: {ResetLikesAct: (act) => {
+      setTimeout(function () {
+        act.commit("ResetLikes");
+      }, 1000);
+    },},
   modules: {},
 });

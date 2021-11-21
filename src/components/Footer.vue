@@ -40,7 +40,7 @@ footer {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px 40px 24px;
+  padding: 16px 24px 80px 24px;
   color: #efefef;
 }
 
